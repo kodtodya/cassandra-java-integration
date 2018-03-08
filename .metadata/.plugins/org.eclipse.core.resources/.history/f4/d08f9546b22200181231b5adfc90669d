@@ -1,0 +1,27 @@
+package com.avadhut.samples;
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
+
+public class CassandraConnectivity {
+
+	public static void main(String[] args) {
+		
+
+		//Create the builder
+		Cluster.Builder myBuilder = Cluster.builder();
+		
+		//Creating cluster
+		Cluster cluster = myBuilder.build();
+		
+		//Create/connect to session
+		Session session = cluster.connect();
+		
+		//Create query to execute
+		String query="CREATE KEYSPACE mykeyspace WITH replication " + "= {'class':'SimpleStrategy','replication_factor':3}; ";
+		
+		session.execute(query);
+
+	}
+
+}

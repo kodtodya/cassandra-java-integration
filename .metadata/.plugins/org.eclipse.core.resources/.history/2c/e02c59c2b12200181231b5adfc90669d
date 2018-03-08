@@ -1,0 +1,32 @@
+package com.avadhut.samples;
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
+
+public class CassandraConnectivity {
+
+	public static void main(String[] args) {
+		
+
+		//Create the builder
+		Cluster.Builder myBuilder = Cluster.builder();
+		
+		//adding the contect point to builder
+		Cluster.Builder myAnotherBuilder = Cluster.builder().addContactPoint("127.0.0.1");
+		
+		//Creating cluster
+		Cluster cluster = myBuilder.build();
+		
+		//Create/connect to session
+		Session session = cluster.connect();
+		
+		//Creating session using keyspace name
+		Session mysession = myAnotherBuilder.build().connect("myspace");
+		
+		String query="CREATE KEYSPACE anotherkeyspace WITH replication " + "= {'class':'SimpleStrategy','replication_factor':3}; ";
+		
+		session.execute(query);
+
+	}
+
+}

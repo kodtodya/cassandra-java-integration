@@ -1,0 +1,27 @@
+package com.avadhut.samples;
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
+
+public class CassandraConnectivity {
+
+	public static void main(String[] args) {
+		
+
+		//Create the builder
+		Cluster.Builder myBuilder = Cluster.builder();
+		
+		//Creating cluster
+		Cluster cluster = myBuilder.build();
+		
+		//Create/connect to session
+		Session session = cluster.connect("myspace");
+		
+		//Create query to execute
+		String query="CREATE TABLE myspace.avadhut (id int PRIMARY KEY, name text);";
+		
+		session.execute(query);
+
+	}
+
+}

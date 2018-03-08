@@ -1,0 +1,17 @@
+package com.avadhut.samples;
+
+import com.datastax.driver.core.Cluster;
+
+public class CassandraConnectivity {
+
+	public static void main(String[] args) {
+		
+
+		//Create the builder
+		Cluster.Builder myBuilder = Cluster.builder();
+		
+		
+
+	}
+
+}

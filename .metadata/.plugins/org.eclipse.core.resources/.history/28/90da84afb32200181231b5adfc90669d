@@ -1,0 +1,34 @@
+package com.avadhut.samples;
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.exceptions.AlreadyExistsException;
+
+public class CassandraConnectivity {
+
+	public static void main(String[] args) {
+		
+
+		//Create the builder
+		Cluster.Builder myBuilder = Cluster.builder().addContactPoint("127.0.0.1");
+		
+		//Creating cluster
+		Cluster cluster = myBuilder.build();
+		
+		//Create/connect to session
+		Session session = cluster.connect();
+		
+		//Create query to execute
+		String query="CREATE KEYSPACE mykeyspace WITH replication " + "= {'class':'SimpleStrategy','replication_factor':3}; ";
+		
+		try {
+		session.execute(query);
+		}catch (AlreadyExistsException e) {
+			System.err.println(e.equals(e.getMessage()));
+		}
+		
+		System.out.println("KEYSPACE created on 127.0.0.1..");
+
+	}
+
+}

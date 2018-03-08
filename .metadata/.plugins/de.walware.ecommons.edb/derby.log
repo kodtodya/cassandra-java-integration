@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Mar 08 14:36:33 IST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0162-04dc-a9f1-00007007f946 
+on database directory /home/alele/_tech/_codeBase/_cassandra/.metadata/.plugins/de.walware.statet.r.core/db with class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader@49e09b23[de.walware.3rdparty-org.apache.derby.core:10.10.2000000.b201703271500E46sw(id=1466)] 
+Loaded from file:/home/alele/_tech/_servers/_others/eclipse/eclipse-oxygen/eclipse/../../../../../../.p2/pool/plugins/de.walware.3rdparty-org.apache.derby.core_10.10.2000000.b201703271500E46sw.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b12
+user.dir=/home/alele
+os.name=Linux
+os.arch=amd64
+os.version=3.10.0-693.2.2.el7.x86_64
+derby.system.home=/home/alele/_tech/_codeBase/_cassandra/.metadata/.plugins/de.walware.ecommons.edb
+Database Class Loader started - derby.database.classpath=''
